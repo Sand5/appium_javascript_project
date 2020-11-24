@@ -1,0 +1,35 @@
+{
+  "name": "appium_js_",
+  "version": "1.0.0",
+  "description": "Appium JS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "test:android": "npm test -- --spec ./test/specs/dialog.test.js"
+  },
+  "keywords": [
+    "appium"
+  ],
+  "author": "Sanderson Imbeah",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "@wdio/appium-service": "^6.7.3",
+    "@wdio/cli": "^6.7.4",
+    "@wdio/local-runner": "^6.7.3",
+    "@wdio/mocha-framework": "^6.7.3",
+    "@wdio/selenium-standalone-service": "^6.7.3",
+    "@wdio/spec-reporter": "^6.7.0",
+    "@wdio/sync": "^6.9.1",
+    "mocha": "^8.2.1",
+    "webdriverio": "^6.7.3"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fibers": "^5.0.0",
+    "shelljs": "^0.8.4"
+  }
+}
