@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
-    "fibers": "^5.0.0",
-    "shelljs": "^0.8.4"
+    "fibers": "^5.0.0"
   }
 }

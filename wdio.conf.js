@@ -50,8 +50,13 @@ exports.config = {
   capabilities: [
     {
       platformName: "Android",
-      "appium:deviceName": "Pixel 2 XL",
-      "appium:app": join(process.cwd(), "./ApiDemos-debug.apk")
+      "appium:deviceName": "Pixel 2",
+      "appium:app": join(process.cwd(), "./ApiDemos-debug.apk"),
+      "appium:avd": "Pixel_2",
+      "appium:automationName":"Appium",
+      //"appium:newCommandTimeout":300000,
+      "appium:avdReadyTimeout":300000,
+      "appium:avdLaunchTimeout":300000
 
       // maxInstances can get overwritten per capability. So if you have an in-house Selenium
       // grid with only 5 firefox instances available you can make sure that not more than
@@ -65,6 +70,7 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
     },
+    
     // {
     //browserName: 'Chrome',
     // platformName: 'iOS',
@@ -120,7 +126,7 @@ exports.config = {
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
-  connectionRetryTimeout: 120000,
+  connectionRetryTimeout: 180000,
   //
   // Default request retries count
   connectionRetryCount: 3,
@@ -188,7 +194,9 @@ exports.config = {
    * @param {Object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  onPrepare: function (config, capabilities) {},
+  onPrepare: function (config, capabilities) {
+
+  },
   /**
    * Gets executed before a worker process is spawned and can be used to initialise specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -216,8 +224,7 @@ exports.config = {
    */
   before: function (capabilities, specs) {
     require("@babel/register");
-    //var process = require('child_process');
-    //process.exec('~/Users/Sanderson/Android/sdk/emulator  emulator @Pixel_2');
+  
   },
   /**
    * Runs before a WebdriverIO command gets executed.
@@ -247,7 +254,8 @@ exports.config = {
    * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
    * afterEach in Mocha)
    */
-  // afterHook: function (test, context, { error, result, duration, passed, retries }) {
+  //afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    
   // },
   /**
    * Function to be executed after a test (in Mocha/Jasmine).
