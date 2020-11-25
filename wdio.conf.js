@@ -56,7 +56,8 @@ exports.config = {
       "appium:automationName":"Appium",
       //"appium:newCommandTimeout":300000,
       "appium:avdReadyTimeout":300000,
-      "appium:avdLaunchTimeout":300000
+      "appium:avdLaunchTimeout":300000,
+      //"appium:avdArgs":"--reboot=true"
 
       // maxInstances can get overwritten per capability. So if you have an in-house Selenium
       // grid with only 5 firefox instances available you can make sure that not more than
@@ -70,7 +71,7 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
     },
-    add
+  
     // {
     //browserName: 'Chrome',
     // platformName: 'iOS',
